@@ -1,0 +1,46 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AB52D0F2-B12A-F36C-E221-9949FDE677A6}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		nuget.config = nuget.config
+		README.md = README.md
+	EndProjectSection
+	ProjectSection(FolderGlobals) = preProject
+		global_1json__JSONSchema = http://json.schemastore.org/global
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{765BAECA-5AFF-0B51-0A8A-BAF44DFBFC91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{267E1506-65BF-8860-1569-A8458D1E40F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digipolis.Delegation", "src\Digipolis.Delegation\Digipolis.Delegation.csproj", "{72133183-B69E-CE2A-E53D-EF4894AA63B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digipolis.Delegation.UnitTests", "test\Digipolis.Delegation.UnitTests\Digipolis.Delegation.UnitTests.csproj", "{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72133183-B69E-CE2A-E53D-EF4894AA63B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72133183-B69E-CE2A-E53D-EF4894AA63B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72133183-B69E-CE2A-E53D-EF4894AA63B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72133183-B69E-CE2A-E53D-EF4894AA63B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72133183-B69E-CE2A-E53D-EF4894AA63B8} = {765BAECA-5AFF-0B51-0A8A-BAF44DFBFC91}
+		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B} = {267E1506-65BF-8860-1569-A8458D1E40F9}
+	EndGlobalSection
+EndGlobal

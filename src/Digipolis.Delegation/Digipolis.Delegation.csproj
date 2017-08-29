@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Toolbox for user delegation.</Description>
+    <Authors>digipolis.be</Authors>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>Digipolis.Delegation</AssemblyName>
+    <PackageId>Digipolis.Delegation</PackageId>
+    <PackageTags>Toolbox;Delegation</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+  </PropertyGroup>
+
+</Project>
