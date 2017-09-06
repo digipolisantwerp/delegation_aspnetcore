@@ -17,14 +17,14 @@ namespace Digipolis.Delegation.Jwt
     public class JwtSigningKeyResolver : IJwtSigningKeyResolver
     {
         private readonly IMemoryCache _cache;
-        private readonly AuthOptions _options;
+        private readonly DelegationOptions _options;
         private readonly MemoryCacheEntryOptions _cacheOptions;
         private readonly HttpClient _client;
         private readonly bool _cachingEnabled;
         private const string CACHE_KEY = "JwtSigningKey";
         private readonly ILogger<JwtSigningKeyResolver> _logger;
 
-        public JwtSigningKeyResolver(IMemoryCache cache, IOptions<AuthOptions> options, HttpMessageHandler handler, ILogger<JwtSigningKeyResolver> logger)
+        public JwtSigningKeyResolver(IMemoryCache cache, IOptions<DelegationOptions> options, HttpMessageHandler handler, ILogger<JwtSigningKeyResolver> logger)
         {
             if (cache == null) throw new ArgumentNullException(nameof(cache), $"{nameof(cache)} cannot be null");
             if (options == null || options.Value == null) throw new ArgumentNullException(nameof(options), $"{nameof(options)} cannot be null");

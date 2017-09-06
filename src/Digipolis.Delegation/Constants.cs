@@ -22,7 +22,6 @@
     internal static class HeaderKeys
     {
         public const string Apikey = "apikey";
-        public const string Delegation = "dgp-authorization-for";
     }
     
 }

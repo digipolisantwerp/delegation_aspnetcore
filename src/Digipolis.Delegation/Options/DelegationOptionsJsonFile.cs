@@ -1,11 +1,11 @@
 ﻿namespace Digipolis.Delegation.Options
 {
-    public class AuthOptionsJsonFile
+    public class DelegationOptionsJsonFile
     {
-        public AuthOptionsJsonFile() : this(AuthOptionsDefaults.OptionsFileName, AuthOptionsDefaults.OptionsFileAuthSection)
+        public DelegationOptionsJsonFile() : this(DelegationOptionsDefaults.OptionsFileName, DelegationOptionsDefaults.OptionsFileAuthDelegationSection)
         { }
 
-        public AuthOptionsJsonFile(string fileName, string section)
+        public DelegationOptionsJsonFile(string fileName, string section)
         {
             FileName = fileName;
             Section = section;

@@ -1,9 +1,11 @@
-﻿using Digipolis.Delegation.Jwt;
+﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http;
+using Digipolis.Delegation.Jwt;
+using Digipolis.Delegation.Options;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Net.Http;
 
 namespace Digipolis.Delegation
 {
@@ -14,8 +16,12 @@ namespace Digipolis.Delegation
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceCollection AddDelegation(this IServiceCollection services)
-        {           
+        public static IServiceCollection AddDelegation(this IServiceCollection services, Action<DelegationOptions> setupAction)
+        {
+            if ( setupAction == null ) throw new ArgumentNullException(nameof(setupAction), $"{nameof(setupAction)} cannot be null.");
+
+            services.Configure(setupAction);
+
             RegisterServices(services);
 
             return services;

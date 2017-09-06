@@ -6,6 +6,8 @@ using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
+using Digipolis.Delegation.Options;
 
 namespace Digipolis.Delegation
 {
@@ -23,7 +25,9 @@ namespace Digipolis.Delegation
             _logger = logger;
         }
 
-        public async Task Invoke(HttpContext context, ISecurityTokenValidator tokenValidator, 
+        public async Task Invoke(HttpContext context, 
+                                 ISecurityTokenValidator tokenValidator, 
+                                 IOptions<DelegationOptions> options,
                                  ITokenValidationParametersFactory tokenValidationParametersFactory)
         {
             if (tokenValidator == null) throw new ArgumentNullException(nameof(tokenValidator), $"{nameof(tokenValidator)} cannot be null.");
@@ -37,7 +41,7 @@ namespace Digipolis.Delegation
 
             try
             {
-                var token = GetDelegationJwtToken(context);
+                var token = GetDelegationJwtToken(context, options.Value.DelegationHeader);
                 
                 if (!string.IsNullOrWhiteSpace(token))
                 {
@@ -83,11 +87,11 @@ namespace Digipolis.Delegation
             await _next.Invoke(context);
         }
 
-        private string GetDelegationJwtToken(HttpContext context)
+        private string GetDelegationJwtToken(HttpContext context, string headerKey)
         {            
-            if (context.Request.Headers.ContainsKey(HeaderKeys.Delegation))
+            if (context.Request.Headers.ContainsKey(headerKey))
             {
-                string header = context.Request.Headers[HeaderKeys.Delegation];
+                string header = context.Request.Headers[headerKey];
 
                 if (!string.IsNullOrWhiteSpace(header))
                 {
