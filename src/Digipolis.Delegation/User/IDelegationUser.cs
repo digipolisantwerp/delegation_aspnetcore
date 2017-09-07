@@ -3,48 +3,53 @@
     public interface IDelegationUser
     {
         /// <summary>
-        /// is a valid delegation user detected
+        /// Is a valid delegation user detected.
         /// </summary>
         bool IsValid { get; }
 
         /// <summary>
-        /// name
+        /// The user's name.
         /// </summary>
         string Name { get; }
 
         /// <summary>
-        /// surname
+        /// The user's surname.
         /// </summary>
         string SurName { get; }
 
         /// <summary>
-        /// givenname
+        /// The user's given name.
         /// </summary>
         string GivenName { get; }
 
         /// <summary>
-        /// sub
+        /// The subject of the JWT token.
         /// </summary>
         string Sub { get; }
 
         /// <summary>
-        /// rrnr
+        /// The user's RRNr.
         /// </summary>
         string RRNr { get; }
 
         /// <summary>
-        /// X-Credential-Username
+        /// X-Credential-Username.
         /// </summary>
         string XCredentialUserName { get; }
 
         /// <summary>
-        /// profileId
+        /// The user's profile Id.
         /// </summary>
         string ProfileId { get; }
 
         /// <summary>
-        /// profileType
+        /// The user's profile type.
         /// </summary>
         string ProfileType { get; }
+
+        /// <summary>
+        /// The JWT token in as a base64 encoded string.
+        /// </summary>
+        string JwtToken { get; }
     }
 }

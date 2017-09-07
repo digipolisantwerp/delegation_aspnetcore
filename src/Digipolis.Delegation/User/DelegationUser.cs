@@ -55,7 +55,12 @@ namespace Digipolis.Delegation
         /// </summary>
         public string ProfileType { get; private set; }
 
-        internal bool TrySetValues(bool isValid, string name, string givenName, string surName, string sub, string rrNr, string xCredentialUserName, string profileId, string profileType)
+        /// <summary>
+        /// The user's JWT token as a base64 encoded string.
+        /// </summary>
+        public string JwtToken { get; private set; }
+
+        internal bool TrySetValues(bool isValid, string name, string givenName, string surName, string sub, string rrNr, string xCredentialUserName, string profileId, string profileType, string jwtToken)
         {
             IsValid = isValid;
             Sub = sub;
@@ -66,10 +71,11 @@ namespace Digipolis.Delegation
             SurName = surName;
             ProfileId = profileId;
             ProfileType = profileType;
+            JwtToken = jwtToken;
             return true;
         }
 
-        internal bool TrySetValues(ClaimsIdentity identity)
+        internal bool TrySetValues(ClaimsIdentity identity, string jwtToken)
         {
             if (identity != null)
             {
@@ -81,6 +87,7 @@ namespace Digipolis.Delegation
                 SurName = identity.GetClaimValue(Claims.SurName);                                
                 ProfileId = identity.GetClaimValue(Claims.ProfileId);
                 ProfileType = identity.GetClaimValue(Claims.ProfileType);
+                JwtToken = jwtToken;
 
                 IsValid = true;
                 return true;

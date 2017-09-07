@@ -1,13 +1,13 @@
-﻿using Digipolis.Delegation.Jwt;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
-using System;
+﻿using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
+using Digipolis.Delegation.Jwt;
 using Digipolis.Delegation.Options;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Digipolis.Delegation
 {
@@ -63,7 +63,7 @@ namespace Digipolis.Delegation
 
                         ClaimsIdentity claimsIdentity = principal.Identities?.FirstOrDefault();
 
-                        if (claimsIdentity != null && delegationUser.TrySetValues(claimsIdentity)) delegationUserParsed = true;
+                        if (claimsIdentity != null && delegationUser.TrySetValues(claimsIdentity, token)) delegationUserParsed = true;
                     }
                 } 
             }
