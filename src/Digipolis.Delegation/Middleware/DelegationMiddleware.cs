@@ -38,10 +38,11 @@ namespace Digipolis.Delegation
             // get DelegationUser added as scoped service
             var delegationUser = context.RequestServices.GetService(typeof(IDelegationUser)) as DelegationUser;
             bool delegationUserParsed = false;
+            var token = string.Empty;
 
             try
             {
-                var token = GetDelegationJwtToken(context, options.Value.DelegationHeader);
+                token = GetDelegationJwtToken(context, options.Value.DelegationHeader);
                 
                 if (!string.IsNullOrWhiteSpace(token))
                 {
@@ -81,7 +82,8 @@ namespace Digipolis.Delegation
             else
             {
                 delegationUser.SetValid(false);
-                _logger.LogInformation($"No delegated user detected for request.");
+                var info = $"No delegated user detected for request { (string.IsNullOrWhiteSpace(token) ? "(no delegation token found)" : $"(delegation token: {token})") }.";                   
+                _logger.LogInformation(info);
             }
             
             await _next.Invoke(context);
