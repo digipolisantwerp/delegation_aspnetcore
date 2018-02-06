@@ -1,4 +1,6 @@
 # Delegation Toolbox
+## 1.1.2
+- Parameterized token lifetimevalidation
 
 ## 1.1.1
 
