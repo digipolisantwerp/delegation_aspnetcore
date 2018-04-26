@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <Description>Toolbox for user delegation.</Description>
-    <Version>1.1.0</Version>
     <Authors>digipolis.be</Authors>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>Digipolis.Delegation</AssemblyName>
@@ -13,7 +12,7 @@
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
     <Copyright>digipolis.be</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
   </PropertyGroup>
   
   <ItemGroup>

@@ -34,7 +34,7 @@ namespace Digipolis.Delegation.Jwt
                 ValidAudience = string.Empty,
                 ValidateIssuer = false,
                 ValidIssuer = _options.JwtIssuer,
-                ValidateLifetime = true,
+                ValidateLifetime = _options.ValidateTokenLifetime,
                 RequireExpirationTime = false,
                 NameClaimType = "sub",
                 RequireSignedTokens = ShouldRequireSignedTokens(),

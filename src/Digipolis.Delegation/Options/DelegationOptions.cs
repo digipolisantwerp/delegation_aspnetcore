@@ -29,6 +29,11 @@
         public string JwtIssuer { get; set; }
 
         /// <summary>
+        /// Validate the token lifetime
+        /// </summary>
+        public bool ValidateTokenLifetime { get; set; } = true;
+
+        /// <summary>
         /// The duration in minutes the Jwt signing key is cached.
         /// Default = 1440 minutes (24 hours).
         /// </summary>
