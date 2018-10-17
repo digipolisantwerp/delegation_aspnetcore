@@ -1,10 +1,11 @@
 # Delegation Toolbox
-## 1.1.2
-- Parameterized token lifetimevalidation
 
-## 1.1.2
+## 1.1.3
 
 - Upgrade Nuget-packages to highest available for .NETStandard v1.6
+
+## 1.1.2
+- Parameterized token lifetimevalidation
 
 ## 1.1.1
 
