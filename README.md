@@ -18,7 +18,7 @@ To add the toolbox to a project, you add the package to the csproj-file :
 
 ```xml
   <ItemGroup>
-    <PackageReference Include="Digipolis.Delegation" Version="1.1.0" />
+    <PackageReference Include="Digipolis.Delegation" Version="1.1.2" />
   </ItemGroup>
 ``` 
 
