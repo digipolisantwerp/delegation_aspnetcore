@@ -1,5 +1,9 @@
 # Delegation Toolbox
 
+## 1.1.5
+
+- Fixed early key disposal
+
 ## 1.1.4
 
 - Fixed memory leaks
