@@ -17,9 +17,12 @@ namespace Digipolis.Delegation.Utilities
         {
             var json = JsonConvert.SerializeObject(content, jsonSettings);
 
-            var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-
-            return await httpClient.PostAsync(requestUri, stringContent); 
+            HttpResponseMessage response;
+            using (var stringContent = new StringContent(json, Encoding.UTF8, "application/json"))
+            {
+                response = await httpClient.PostAsync(requestUri, stringContent);
+            }
+            return response;
         }
     }
 }

@@ -1,5 +1,9 @@
 # Delegation Toolbox
 
+## 1.1.4
+
+- Fixed memory leaks
+
 ## 1.1.3
 
 - Upgrade Nuget-packages to highest available for .NETStandard v1.6
