@@ -3,16 +3,17 @@
   <PropertyGroup>
     <Description>Toolbox for user delegation.</Description>
     <Authors>digipolis.be</Authors>
+    <VersionPrefix>1.1.4</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Digipolis.Delegation</AssemblyName>
     <PackageId>Digipolis.Delegation</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <AssemblyName>Digipolis.Delegation</AssemblyName>
+    <PackageId>Digipolis.Delegation</PackageId>
     <PackageTags>Toolbox;Delegation</PackageTags>
-    <RepositoryType>git</RepositoryType>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
     <Copyright>digipolis.be</Copyright>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.4</Version>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   
   <ItemGroup>
