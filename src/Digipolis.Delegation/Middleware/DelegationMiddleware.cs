@@ -65,6 +65,8 @@ namespace Digipolis.Delegation
                         ClaimsIdentity claimsIdentity = principal.Identities?.FirstOrDefault();
 
                         if (claimsIdentity != null && delegationUser.TrySetValues(claimsIdentity, token)) delegationUserParsed = true;
+                        
+                        //context.Request.Headers.Add(options.Value.DelegationHeader, "Bearer " + token);
                     }
                 } 
             }
@@ -89,7 +91,7 @@ namespace Digipolis.Delegation
             await _next.Invoke(context);
         }
 
-        private string GetDelegationJwtToken(HttpContext context, string headerKey)
+        public static string GetDelegationJwtToken(HttpContext context, string headerKey)
         {            
             if (context.Request.Headers.ContainsKey(headerKey))
             {

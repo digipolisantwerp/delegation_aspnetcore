@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
+using Digipolis.Delegation.Handlers;
 using Digipolis.Delegation.Jwt;
 using Digipolis.Delegation.Options;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,7 +36,8 @@ namespace Digipolis.Delegation
             services.AddSingleton<ISecurityTokenValidator, JwtSecurityTokenHandler>();
             services.AddSingleton<ITokenValidationParametersFactory, TokenValidationParametersFactory>();
             
-            services.TryAddSingleton<HttpMessageHandler, HttpClientHandler>();            
+            //services.TryAddSingleton<HttpMessageHandler, HttpClientHandler>();
+            services.TryAddSingleton<HttpMessageHandler, AuthorizationHeaderHandler>();
         }
         
     }

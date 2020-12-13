@@ -17,9 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{765BAECA-5AF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{267E1506-65BF-8860-1569-A8458D1E40F9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{267E1506-65BF-8860-1569-A8458D1E40F9}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digipolis.Delegation", "src\Digipolis.Delegation\Digipolis.Delegation.csproj", "{72133183-B69E-CE2A-E53D-EF4894AA63B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digipolis.Delegation.UnitTests", "test\Digipolis.Delegation.UnitTests\Digipolis.Delegation.UnitTests.csproj", "{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digipolis.Delegation.UnitTests", "test\Digipolis.Delegation.UnitTests\Digipolis.Delegation.UnitTests.csproj", "{AF2F86C0-2BC8-4DCB-AB09-39DCF129B345}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "example\Example\Example.csproj", "{2113D3E8-E484-4460-9C82-0CD381275A61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digipolis.Auth", "..\netcore_nuget_wip\src\Digipolis.Auth\Digipolis.Auth.csproj", "{B82A7530-0C11-4845-A54E-D806422063CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,16 +37,26 @@ Global
 		{72133183-B69E-CE2A-E53D-EF4894AA63B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72133183-B69E-CE2A-E53D-EF4894AA63B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72133183-B69E-CE2A-E53D-EF4894AA63B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF2F86C0-2BC8-4DCB-AB09-39DCF129B345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2F86C0-2BC8-4DCB-AB09-39DCF129B345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2F86C0-2BC8-4DCB-AB09-39DCF129B345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2F86C0-2BC8-4DCB-AB09-39DCF129B345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2113D3E8-E484-4460-9C82-0CD381275A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2113D3E8-E484-4460-9C82-0CD381275A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2113D3E8-E484-4460-9C82-0CD381275A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2113D3E8-E484-4460-9C82-0CD381275A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82A7530-0C11-4845-A54E-D806422063CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82A7530-0C11-4845-A54E-D806422063CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82A7530-0C11-4845-A54E-D806422063CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82A7530-0C11-4845-A54E-D806422063CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{72133183-B69E-CE2A-E53D-EF4894AA63B8} = {765BAECA-5AFF-0B51-0A8A-BAF44DFBFC91}
-		{B69A4DE9-B6D1-FDA2-C8EB-FBB4EE143B9B} = {267E1506-65BF-8860-1569-A8458D1E40F9}
+		{AF2F86C0-2BC8-4DCB-AB09-39DCF129B345} = {267E1506-65BF-8860-1569-A8458D1E40F9}
+		{2113D3E8-E484-4460-9C82-0CD381275A61} = {267E1506-65BF-8860-1569-A8458D1E40F9}
+		{B82A7530-0C11-4845-A54E-D806422063CC} = {267E1506-65BF-8860-1569-A8458D1E40F9}
 	EndGlobalSection
 EndGlobal

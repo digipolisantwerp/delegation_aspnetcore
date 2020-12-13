@@ -4,7 +4,7 @@
     <Description>Toolbox for user delegation.</Description>
     <Authors>digipolis.be</Authors>
     <VersionPrefix>1.1.5</VersionPrefix>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>Digipolis.Delegation</AssemblyName>
     <PackageId>Digipolis.Delegation</PackageId>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
