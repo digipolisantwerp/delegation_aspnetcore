@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Digipolis.Auth.Agents;
+using Digipolis.Auth.Authorization.Attributes;
+using Digipolis.Auth.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,6 +14,7 @@ using Newtonsoft.Json;
 
 namespace Example.Controllers
 {
+    
     [ApiController]
     [Route("[controller]")]
     public class ExampleController : ControllerBase
@@ -30,7 +33,7 @@ namespace Example.Controllers
         public string GetJwtToken()
         {
             var request = WebRequest.Create(
-                $"https://api-gw-a.antwerpen.be/acpaas/meauthz/v2/oauth2/authorize?client_id={Constants.ClientId}&client_secret={Constants.ClientSecret}&response_type=token&provision_key={Constants.ProvisionKey}&authenticated_userid={Constants.UserId}");
+                $"{Constants.MeAuthzUrl}/oauth2/authorize?client_id={Constants.ClientId}&client_secret={Constants.ClientSecret}&response_type=token&provision_key={Constants.ProvisionKey}&authenticated_userid={Constants.UserId}");
             request.Headers.Add("apikey", Constants.ApiKey);
             request.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
             request.Method = "POST";
@@ -50,10 +53,12 @@ namespace Example.Controllers
             return jwt;
         }
         
+        [AuthorizeWith(AuthenticationSchemes = AuthScheme.JwtHeaderAuth)]
         [HttpGet("[action]")]
-        public void GetProtected()
+        public bool GetProtected()
         {
             _logger.LogInformation("protected");
+            return true;
         }
         
         private class AccessToken
