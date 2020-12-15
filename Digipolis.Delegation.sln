@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBD}") = "Example", "example\Example\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digipolis.Auth", "..\netcore_nuget_wip\src\Digipolis.Auth\Digipolis.Auth.csproj", "{B82A7530-0C11-4845-A54E-D806422063CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digipolis.Delegation.Integration.Tests", "test\Digipolis.Delegation.Integration.Tests\Digipolis.Delegation.Integration.Tests.csproj", "{19C8F666-F12D-46A2-BC6A-83C1C8926547}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,10 +49,6 @@ Global
 		{B82A7530-0C11-4845-A54E-D806422063CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B82A7530-0C11-4845-A54E-D806422063CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B82A7530-0C11-4845-A54E-D806422063CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19C8F666-F12D-46A2-BC6A-83C1C8926547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19C8F666-F12D-46A2-BC6A-83C1C8926547}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19C8F666-F12D-46A2-BC6A-83C1C8926547}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19C8F666-F12D-46A2-BC6A-83C1C8926547}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +58,5 @@ Global
 		{AF2F86C0-2BC8-4DCB-AB09-39DCF129B345} = {267E1506-65BF-8860-1569-A8458D1E40F9}
 		{B82A7530-0C11-4845-A54E-D806422063CC} = {267E1506-65BF-8860-1569-A8458D1E40F8}
 		{2113D3E8-E484-4460-9C82-0CD381275A61} = {267E1506-65BF-8860-1569-A8458D1E40F8}
-		{19C8F666-F12D-46A2-BC6A-83C1C8926547} = {267E1506-65BF-8860-1569-A8458D1E40F9}
 	EndGlobalSection
 EndGlobal
