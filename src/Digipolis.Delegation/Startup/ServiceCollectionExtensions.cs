@@ -36,8 +36,11 @@ namespace Digipolis.Delegation
             services.AddSingleton<ISecurityTokenValidator, JwtSecurityTokenHandler>();
             services.AddSingleton<ITokenValidationParametersFactory, TokenValidationParametersFactory>();
             
-            //services.TryAddSingleton<HttpMessageHandler, HttpClientHandler>();
-            services.TryAddSingleton<HttpMessageHandler, AuthorizationHeaderHandler>();
+            services.TryAddSingleton<HttpMessageHandler, HttpClientHandler>();
+            services.AddTransient<AuthorizationHeaderHandler>();
+            services.AddHttpClient(string.Empty)
+                .AddHttpMessageHandler<AuthorizationHeaderHandler>();
+            
         }
         
     }

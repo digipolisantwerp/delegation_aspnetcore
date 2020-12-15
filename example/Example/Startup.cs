@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Digipolis.ApplicationServices;
 using Digipolis.Auth;
 using Digipolis.Auth.Constants;
+using Digipolis.Delegation;
+using Digipolis.Delegation.Handlers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,7 +16,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 
 namespace Example
@@ -47,17 +52,23 @@ namespace Example
                 options.PermissionSource = Constants.PermissionSource;
             });
             
-            var appUserPolicy = new AuthorizationPolicyBuilder()
-                .RequireClaim(ClaimKey.PermissionsType, Constants.ApplicationLoginPermission)
+            var customPolicy = new AuthorizationPolicyBuilder()
+                .AddAuthenticationSchemes(AuthScheme.JwtHeaderAuth)
+                .RequireAuthenticatedUser()
                 .Build();
-            
+
             services.AddAuthorizationCore(services.BuildJwtAuthPolicies(
                 new Dictionary<string, AuthorizationPolicy>
                 {
-                    {Constants.ApplicationUser, appUserPolicy}
+                    {"Authenticated", customPolicy}
                 }));
             
             services.AddControllers();
+            services.AddDelegation(options =>
+            {
+                options.ApplicationName = Constants.ApplicationId;
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Example", Version = "v1"});
@@ -81,6 +92,7 @@ namespace Example
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Example v1"));
                 
             }
+            app.UseDelegation();
 
             app.UseHttpsRedirection();
 
@@ -89,6 +101,8 @@ namespace Example
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            
         }
     }
 }

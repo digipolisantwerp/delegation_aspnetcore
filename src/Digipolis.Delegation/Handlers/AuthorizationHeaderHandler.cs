@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Digipolis.Delegation.Options;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -13,15 +14,15 @@ namespace Digipolis.Delegation.Handlers
     {
         private readonly ILogger<AuthorizationHeaderHandler> _logger;
         private readonly IOptions<DelegationOptions> _options;
-        private readonly IDelegationUser _user;
+        private readonly IHttpContextAccessor _accessor;
         public AuthorizationHeaderHandler(
             ILogger<AuthorizationHeaderHandler> logger, 
             IOptions<DelegationOptions> options,
-            IDelegationUser user)
+            IHttpContextAccessor accessor)
         {
             _logger = logger ?? throw new ArgumentException($"{GetType().Name}.Ctor parameter {nameof(logger)} cannot be null.");
             _options = options ?? throw new ArgumentNullException(nameof(options));
-            _user = user ?? throw new ArgumentNullException(nameof(user));
+            _accessor = accessor ?? throw new ArgumentNullException(nameof(accessor));
         }
 
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
@@ -29,7 +30,9 @@ namespace Digipolis.Delegation.Handlers
             string token = String.Empty;
             try
             {
-                token = _user.JwtToken;
+                // retrieve the user from the Request DI Scope, if you use normal DI then it will be a new scope and therefore a new user
+                var user = _accessor.HttpContext.RequestServices.GetRequiredService<IDelegationUser>();
+                token = user.JwtToken;
             }
             catch (Exception)
             {
