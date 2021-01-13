@@ -1,3 +1,9 @@
+# This toolbox is no longer maintained in this repository
+
+This toolbox is moved to the Authentication toolbox repository on Bitbucket. Please use that repository instead of this one.
+
+
+
 # Delegation Toolbox
 
 This toolbox extracts a (user's) JWT token from a custom header and makes it available to the application code.
@@ -20,7 +26,7 @@ To add the toolbox to a project, you add the package to the csproj-file :
   <ItemGroup>
     <PackageReference Include="Digipolis.Delegation" Version="1.1.3" />
   </ItemGroup>
-``` 
+```
 
 In Visual Studio you can also use the NuGet Package Manager to do this.
 
