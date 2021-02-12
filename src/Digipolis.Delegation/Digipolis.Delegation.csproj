@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Toolbox for user delegation.</Description>
+    <Description>Deprecated: Toolbox for user delegation. See bitbucket</Description>
     <Authors>digipolis.be</Authors>
     <VersionPrefix>1.1.5</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>

@@ -1,7 +1,6 @@
-# This toolbox is no longer maintained in this repository
+# DEPRECATED: This toolbox is no longer maintained in this repository
 
-This toolbox is moved to the Authentication toolbox repository on Bitbucket. Please use that repository instead of this one.
-
+This repository is moved to the ASPNET project on Bitbucket. Please use that repository instead of this one.
 
 
 # Delegation Toolbox
